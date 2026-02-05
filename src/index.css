@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --navy: #0A1F44;
+  --navy-dark: #0B1E3C;
+  --white: #FFFFFF;
+  --soft-white: #F8FAFC;
+  --orange: #F97316;
+  --orange-hover: #EA580C;
+  --text-dark: #1F2937;
+  --text-muted: #6B7280;
+  --border: #E5E7EB;
+
+  --primary: var(--navy);
+  --secondary: var(--orange);
+  --accent: var(--orange);
+  --bg-light: var(--white);
+  --bg-soft: var(--soft-white);
+  --text-main: var(--text-dark);
+  --text-dim: var(--text-muted);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-main);
+  overflow-x: hidden;
+  line-height: 1.5;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Base Fade In for non-AOS elements if needed */
+.animate-fade {
+  opacity: 1 !important;
+  /* Overriding previous manual animation to let AOS handle it */
+}
+
+/* Swiper Customization */
+.swiper-pagination-bullet-active {
+  background: var(--secondary) !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--primary) !important;
+  transform: scale(0.7);
+  background: rgba(255, 255, 255, 0.8);
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 20px !important;
+  font-weight: 800;
+}
+
+/* AOS Tweaks */
+[data-aos] {
+  pointer-events: none;
+}
+
+[data-aos].aos-animate {
+  pointer-events: auto;
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
